@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Beginner Hub | One-Page Guide</title>
+    <style>
+        /* Base Styling & Variables */
+        :root {
+            --primary: #2563eb;
+            --success: #16a34a;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --border: #e2e8f0;
+            --text: #334155;
+            --code-bg: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        /* Section Layouts */
+        h2 {
+            color: var(--dark);
+            margin: 30px 0 15px 0;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 5px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* CI/CD Pipeline Visualizer */
+        .pipeline {
+            display: flex;
+            flex-wrap: wrap;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            text-align: center;
+        }
+
+        .step {
+            background: var(--light);
+            border: 2px solid var(--primary);
+            padding: 15px;
+            border-radius: 6px;
+            flex: 1;
+            min-width: 140px;
+            font-weight: bold;
+        }
+
+        .step span {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: normal;
+            color: #64748b;
+            margin-top: 5px;
+        }
+
+        .arrow {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* Code/Command Snippets */
+        code-block {
+            display: block;
+            background-color: var(--code-bg);
+            color: #f8fafc;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        /* Status Badges */
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: var(--primary);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Quick Bullet points */
+        ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pipeline {
+                flex-direction: column;
+            }
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>Infinity DevOps Hub</h1>
+            <p>Everything a beginner needs to understand the fundamentals on a single page.</p>
+        </header>
+
+        <!-- 1. What is DevOps -->
+        <h2>1. The Core Philosophy</h2>
+        <div class="card">
+            <p><strong>DevOps</strong> is not just a tool; it is a cultural combination of <strong>Development (Dev)</strong> and <strong>Operations (Ops)</strong>. The primary objective is to shorten the systems development lifecycle and provide continuous delivery with high software quality.</p>
+        </div>
+
+        <!-- 2. The Pillars of DevOps -->
+        <h2>2. Core Pillars & Tools</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="badge">Version Control</span>
+                <h3>📦 Git & Source Control</h3>
+                <p>Tracks code alterations and coordinates work among teams.</p>
+                <ul>
+                    <li><strong>Key Concepts:</strong> Commits, Branching, Pull Requests</li>
+                    <li><strong>Popular Tools:</strong> GitHub, GitLab, Bitbucket</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <span class="badge">Automation</span>
+                <h3>⚙️ CI/CD Pipelines</h3>
+                <p>Automates building, testing, and deploying updates safely.</p>
+                <ul>
+                    <li><strong>Continuous Integration:</strong> Auto-testing code builds.</li>
+                    <li><strong>Continuous Deployment:</strong> Auto-pushing to production.</li>
+                    <li><strong>Popular Tools:</strong> Jenkins, GitHub Actions, GitLab CI</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <span class="badge">Isolation</span>
+                <h3>🐳 Containerisation</h3>
+                <p>Packages applications with all dependencies so they run uniformly anywhere.</p>
+                <ul>
+                    <li><strong>Key Concepts:</strong> Dockerfiles, Images, Containers</li>
+                    <li><strong>Popular Tools:</strong> Docker, Kubernetes (for managing containers)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <span class="badge">Automation</span>
+                <h3>🏗️ Infrastructure as Code (IaC)</h3>
+                <p>Defines servers, networks, and infrastructure using configuration files instead of manual clicks.</p>
+                <ul>
+                    <li><strong>Key Concepts:</strong> Declarative files, Immutable setups</li>
+                    <li><strong>Popular Tools:</strong> Terraform, Ansible</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3. Visualizing a CI/CD Pipeline -->
+        <h2>3. Typical CI/CD Pipeline Workflow</h2>
+        <div class="pipeline">
+            <div class="step">1. Code <span>Developer commits code to Git</span></div>
+            <div class="arrow">➔</div>
+            <div class="step">2. Build <span>CI Tool compiles app & builds Docker image</span></div>
+            <div class="arrow">➔</div>
+            <div class="step">3. Test <span>Automated unit & integration tests execute</span></div>
+            <div class="arrow">➔</div>
+            <div class="step">4. Deploy <span>Image is shipped onto production servers</span></div>
+            <div class="arrow">➔</div>
+            <div class="step">5. Monitor <span>Live tools check uptime and error logs</span></div>
+        </div>
+
+        <!-- 4. Essential Cheatsheet for Beginners -->
+        <h2>4. Beginner Command Cheatsheet</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Git Commands</h3>
+                <p>Essential terminal lines for version tracking:</p>
+                <code-block>
+# Clone a project repository
+git clone https://github.com
+
+# Stage changes and commit
+git add .
+git commit -m "Fix core feature"
+
+# Push updates online
+git push origin main
+                </code-block>
+            </div>
+
+            <div class="card">
+                <h3>Docker Commands</h3>
+                <p>Essential interactions with software containers:</p>
+                <code-block>
+# Build image from local Dockerfile
+docker build -t my-app:1.0 .
+
+# Spin up application container live
+docker run -d -p 8080:8080 my-app:1.0
+
+# View all active running spaces
+docker ps
+                </code-block>
+            </div>
+        </div>
+
+        <!-- 5. Next Steps Roadmap -->
+        <h2>5. Your Guided Learning Pathway</h2>
+        <div class="card">
+            <ul>
+                <li><strong>Step 1:</strong> Get comfortable operating inside a <strong>Linux Terminal</strong> environment.</li>
+                <li><strong>Step 2:</strong> Master basic <strong>Git branching</strong> workflows.</li>
+                <li><strong>Step 3:</strong> Learn to containerise a simple Node.js or Python application using <strong>Docker</strong>.</li>
+                <li><strong>Step 4:</strong> Configure a basic automation script inside <strong>GitHub Actions</strong>.</li>
+                <li><strong>Step 5:</strong> Deploy an application onto a cloud provider engine (e.g., AWS, Google Cloud, or Azure).</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
