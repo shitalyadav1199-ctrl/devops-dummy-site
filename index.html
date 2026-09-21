@@ -1,171 +1,222 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps Beginner Hub | One-Page Guide</title>
+    <title>Alex Dev | Portfolio</title>
     <style>
-        /* Base Styling & Variables */
+        /* Modern Design System & Variables */
         :root {
-            --primary: #2563eb;
-            --success: #16a34a;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --border: #e2e8f0;
-            --text: #334155;
-            --code-bg: #1e293b;
+            --bg-main: #0b0f19;
+            --bg-card: #151f32;
+            --accent: #10b981; /* Emerald Green */
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border: #22314d;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--light);
-            color: var(--text);
+            background-color: var(--bg-main);
+            color: var(--text-primary);
             line-height: 1.6;
-            padding-bottom: 60px;
+            padding-bottom: 40px;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
 
-        /* Header */
-        header {
-            background-color: var(--dark);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            color: #94a3b8;
-            font-size: 1.1rem;
-        }
-
-        /* Section Layouts */
-        h2 {
-            color: var(--dark);
-            margin: 30px 0 15px 0;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 5px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
+        /* Navigation Bar */
+        nav {
             display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* CI/CD Pipeline Visualizer */
-        .pipeline {
-            display: flex;
-            flex-wrap: wrap;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
             justify-content: space-between;
             align-items: center;
-            gap: 15px;
+            padding: 25px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Profile Section */
+        .hero {
+            padding: 90px 0;
             text-align: center;
         }
 
-        .step {
-            background: var(--light);
-            border: 2px solid var(--primary);
-            padding: 15px;
-            border-radius: 6px;
-            flex: 1;
-            min-width: 140px;
-            font-weight: bold;
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
         }
 
-        .step span {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: normal;
-            color: #64748b;
-            margin-top: 5px;
+        .hero h1 span {
+            color: var(--accent);
         }
 
-        .arrow {
-            font-size: 1.5rem;
-            color: var(--primary);
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
         }
 
-        /* Code/Command Snippets */
-        code-block {
-            display: block;
-            background-color: var(--code-bg);
-            color: #f8fafc;
-            padding: 15px;
-            border-radius: 6px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9rem;
-            margin-top: 10px;
-            overflow-x: auto;
-            white-space: pre;
-        }
-
-        /* Status Badges */
-        .badge {
+        .btn {
             display: inline-block;
-            background: #dbeafe;
-            color: var(--primary);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
+            background-color: var(--accent);
+            color: var(--bg-main);
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
             font-weight: 600;
-            margin-bottom: 10px;
+            transition: transform 0.2s ease, opacity 0.2s ease;
         }
 
-        /* Quick Bullet points */
-        ul {
-            margin-left: 20px;
-            margin-bottom: 10px;
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
         }
 
-        li {
-            margin-bottom: 4px;
+        /* Section Headings */
+        h2 {
+            font-size: 2rem;
+            margin: 60px 0 30px 0;
+            position: relative;
+            display: inline-block;
         }
 
-        /* Responsive */
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        /* Projects Section (Grid Structure) */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 25px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .project-tag {
+            font-size: 0.8rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .project-card h3 {
+            margin: 10px 0;
+            font-size: 1.4rem;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-form {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--bg-main);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        /* Responsive Breakpoints */
         @media (max-width: 768px) {
-            .pipeline {
-                flex-direction: column;
+            .hero h1 {
+                font-size: 2.5rem;
             }
-            .arrow {
-                transform: rotate(90deg);
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links a {
+                margin: 0 10px;
             }
         }
     </style>
@@ -173,124 +224,74 @@
 <body>
 
     <div class="container">
-        <!-- Header Section -->
-        <header>
-            <h1>Shital yadav DevOps Hub</h1>
-            <p>Everything a beginner needs to understand the fundamentals on a single page.</p>
-        </header>
-
-        <!-- 1. What is DevOps -->
-        <h2>1. The Core Philosophy</h2>
-        <div class="card">
-            <p><strong>DevOps</strong> is not just a tool; it is a cultural combination of <strong>Development (Dev)</strong> and <strong>Operations (Ops)</strong>. The primary objective is to shorten the systems development lifecycle and provide continuous delivery with high software quality.</p>
-        </div>
-
-        <!-- 2. The Pillars of DevOps -->
-        <h2>2. Core Pillars & Tools</h2>
-        <div class="grid">
-            <div class="card">
-                <span class="badge">Version Control</span>
-                <h3>📦 Git & Source Control</h3>
-                <p>Tracks code alterations and coordinates work among teams.</p>
-                <ul>
-                    <li><strong>Key Concepts:</strong> Commits, Branching, Pull Requests</li>
-                    <li><strong>Popular Tools:</strong> GitHub, GitLab, Bitbucket</li>
-                </ul>
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">Alex<span>.dev</span></div>
+            <div class="nav-links">
+                <a href="dummy2.html">About</a>
+                <a href="#projects">Work</a>
+                <a href="#contact">Contact</a>
             </div>
+        </nav>
 
-            <div class="card">
-                <span class="badge">Automation</span>
-                <h3>⚙️ CI/CD Pipelines</h3>
-                <p>Automates building, testing, and deploying updates safely.</p>
-                <ul>
-                    <li><strong>Continuous Integration:</strong> Auto-testing code builds.</li>
-                    <li><strong>Continuous Deployment:</strong> Auto-pushing to production.</li>
-                    <li><strong>Popular Tools:</strong> Jenkins, GitHub Actions, GitLab CI</li>
-                </ul>
+        <!-- Hero Section -->
+        <section class="hero" id="about">
+            <h1>Some Digital <span>Experiences</span> & Infrastructure</h1>
+            <p>I am a full-stack engineer specializing in developing highly scalable web applications and clean modern interfaces.</p>
+            <a href="#contact" class="btn">Let's Connect</a>
+        </section>
+
+        <!-- Projects Grid -->
+        <section id="projects">
+            <h2>Selected Work</h2>
+            <div class="project-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <span class="project-tag">Cloud Native</span>
+                    <h3>CloudScale Tracker</h3>
+                    <p>A real-time monitoring dashboard pulling data hooks directly from AWS CloudWatch metrics pipelines seamlessly.</p>
+                    <a href="#" class="project-link">View Repository →</a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <span class="project-tag">Frontend Design</span>
+                    <h3>E-Commerce Core</h3>
+                    <p>A lightning-fast frontend storefront interface utilizing modern CSS Grid architectures and micro-interactions.</p>
+                    <a href="#" class="project-link">View Live Demo →</a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <span class="project-tag">Automation</span>
+                    <h3>AutoDeploy CLI</h3>
+                    <p>A custom command-line interface tool created to spin up localized dev environments instantly using configuration scripts.</p>
+                    <a href="#" class="project-link">View Documentation →</a>
+                </div>
+
             </div>
+        </section>
 
-            <div class="card">
-                <span class="badge">Isolation</span>
-                <h3>🐳 Containerisation</h3>
-                <p>Packages applications with all dependencies so they run uniformly anywhere.</p>
-                <ul>
-                    <li><strong>Key Concepts:</strong> Dockerfiles, Images, Containers</li>
-                    <li><strong>Popular Tools:</strong> Docker, Kubernetes (for managing containers)</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <span class="badge">Automation</span>
-                <h3>🏗️ Infrastructure as Code (IaC)</h3>
-                <p>Defines servers, networks, and infrastructure using configuration files instead of manual clicks.</p>
-                <ul>
-                    <li><strong>Key Concepts:</strong> Declarative files, Immutable setups</li>
-                    <li><strong>Popular Tools:</strong> Terraform, Ansible</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- 3. Visualizing a CI/CD Pipeline -->
-        <h2>3. Typical CI/CD Pipeline Workflow</h2>
-        <div class="pipeline">
-            <div class="step">1. Code <span>Developer commits code to Git</span></div>
-            <div class="arrow">➔</div>
-            <div class="step">2. Build <span>CI Tool compiles app & builds Docker image</span></div>
-            <div class="arrow">➔</div>
-            <div class="step">3. Test <span>Automated unit & integration tests execute</span></div>
-            <div class="arrow">➔</div>
-            <div class="step">4. Deploy <span>Image is shipped onto production servers</span></div>
-            <div class="arrow">➔</div>
-            <div class="step">5. Monitor <span>Live tools check uptime and error logs</span></div>
-        </div>
-
-        <!-- 4. Essential Cheatsheet for Beginners -->
-        <h2>4. Beginner Command Cheatsheet</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Git Commands</h3>
-                <p>Essential terminal lines for version tracking:</p>
-                <code-block>
-# Clone a project repository
-git clone https://github.com
-
-# Stage changes and commit
-git add .
-git commit -m "Fix core feature"
-
-# Push updates online
-git push origin main
-                </code-block>
-            </div>
-
-            <div class="card">
-                <h3>Docker Commands</h3>
-                <p>Essential interactions with software containers:</p>
-                <code-block>
-# Build image from local Dockerfile
-docker build -t my-app:1.0 .
-
-# Spin up application container live
-docker run -d -p 8080:8080 my-app:1.0
-
-# View all active running spaces
-docker ps
-                </code-block>
-            </div>
-        </div>
-
-        <!-- 5. Next Steps Roadmap -->
-        <h2>5. Your Guided Learning Pathway</h2>
-        <div class="card">
-            <ul>
-                <li><strong>Step 1:</strong> Get comfortable operating inside a <strong>Linux Terminal</strong> environment.</li>
-                <li><strong>Step 2:</strong> Master basic <strong>Git branching</strong> workflows.</li>
-                <li><strong>Step 3:</strong> Learn to containerise a simple Node.js or Python application using <strong>Docker</strong>.</li>
-                <li><strong>Step 4:</strong> Configure a basic automation script inside <strong>GitHub Actions</strong>.</li>
-                <li><strong>Step 5:</strong> Deploy an application onto a cloud provider engine (e.g., AWS, Google Cloud, or Azure).</li>
-            </ul>
-        </div>
-
+        <!-- Contact Form Section -->
+        <section id="contact">
+            <h2 style="text-align: center; display: block; margin-bottom: 40px;">Get In Touch</h2>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Dummy Form Submitted Successfully!');">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Send Message</button>
+            </form>
+        </section>
     </div>
 
 </body>
