@@ -1,25 +1,26 @@
-name: Html Website Check
+name: HTML Website Check
+
 on:
-    push:
-        pull_request:
-          jobs:
-            check-html:
-              runs on: ubuntu-latest:
-                steps:
-                - name: checkout repository
-                uses: actions/checkout@v4
+  push:
+  pull_request:
 
-              - name: check index.html
-              run:
-                test -f index.html
-                echo "index.html exists"
+jobs:
+  check-html:
+    runs-on: ubuntu-latest
 
-              - name: check dummy2.html
-              run:
-                test -f dummy2.html
-                echo "dummy2.html"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-              - name: Test completed
-              run: echo "HTML files checked successfully!"
+      - name: Check index.html
+        run: |
+          test -f index.html
+          echo "index.html exists"
 
+      - name: Check dummy2.html
+        run: |
+          test -f dummy2.html
+          echo "dummy2.html exists"
 
+      - name: Test completed
+        run: echo "HTML files checked successfully!"
